@@ -12,35 +12,35 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api/enrollments")
 public class StudentCourseController {
 
-	 private final StudentCourseService studentCourseService;
+	 private final StudentCourseService ser;
 	
 	 @Autowired
 	 public StudentCourseController(StudentCourseService studentCourseService) {
-	     this.studentCourseService = studentCourseService;
+	     this.ser = studentCourseService;
 	 }
 	
 	 @PostMapping
 	 public ResponseEntity<StudentCourseDTO> enrollStudentInCourse(@Valid @RequestBody StudentCourseDTO studentCourseDTO) {
-	     StudentCourseDTO enrolled = studentCourseService.enrollStudentInCourse(studentCourseDTO);
+	     StudentCourseDTO enrolled = ser.enrollStudentInCourse(studentCourseDTO);
 	     return new ResponseEntity<>(enrolled, HttpStatus.CREATED);
 	 }
 	
 	 @GetMapping("/{studentId}/{courseId}")
 	 public ResponseEntity<StudentCourseDTO> getEnrollmentDetails(@PathVariable Long studentId, @PathVariable Long courseId) {
-	     StudentCourseDTO enrollment = studentCourseService.getEnrollmentDetails(studentId, courseId);
+	     StudentCourseDTO enrollment = ser.getEnrollmentDetails(studentId, courseId);
 	     return ResponseEntity.ok(enrollment);
 	 }
 	
 	 @PutMapping("/{studentId}/{courseId}")
 	 public ResponseEntity<StudentCourseDTO> updateEnrollment(@PathVariable Long studentId, @PathVariable Long courseId,
 	                                                        @Valid @RequestBody StudentCourseDTO studentCourseDTO) {
-	     StudentCourseDTO updated = studentCourseService.updateEnrollment(studentId, courseId, studentCourseDTO);
+	     StudentCourseDTO updated = ser.updateEnrollment(studentId, courseId, studentCourseDTO);
 	     return ResponseEntity.ok(updated);
 	 }
 	
 	 @DeleteMapping("/{studentId}/{courseId}")
 	 public ResponseEntity<Void> unenrollStudentFromCourse(@PathVariable Long studentId, @PathVariable Long courseId) {
-	     studentCourseService.unenrollStudentFromCourse(studentId, courseId);
+	     ser.unenrollStudentFromCourse(studentId, courseId);
 	     return ResponseEntity.noContent().build();
 	 }
 }
