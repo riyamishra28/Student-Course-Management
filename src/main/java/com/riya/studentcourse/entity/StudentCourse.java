@@ -26,9 +26,9 @@ public class StudentCourse {
 	 @NotNull(message = "Enrolled date cannot be null")
 	 private LocalDate enrolledDate;
 	
-	 @Min(value = 0, message = "Grade must be at least 0")
-	 @Max(value = 100, message = "Grade must be at most 100")
-	 private Integer grade; // e.g., 0-100
+	 @Min(value = 0, message = "marks must be at least 0")
+	 @Max(value = 100, message = "marks must be at most 100")
+	 private Integer marks;
 	
 	 @NotNull(message = "Attendance cannot be null")
 	 @Min(value = 0, message = "Attendance percentage must be at least 0")
@@ -37,11 +37,11 @@ public class StudentCourse {
 	
 	 public StudentCourse() {}
 	 
-	 public StudentCourse(Student student, Course course, LocalDate enrolledDate, Integer grade, Integer attendancePercentage) {
+	 public StudentCourse(Student student, Course course, LocalDate enrolledDate, Integer marks, Integer attendancePercentage) {
 	     this.student = student;
 	     this.course = course;
 	     this.enrolledDate = enrolledDate;
-	     this.grade = grade;
+	     this.marks = marks;
 	     this.attendancePercentage = attendancePercentage;
 	     this.id = new StudentCourseId(student.getId(), course.getId());
 	 }
@@ -86,15 +86,16 @@ public class StudentCourse {
 	     this.enrolledDate = enrolledDate;
 	 }
 	
-	 public Integer getGrade() {
-	     return grade;
-	 }
 	
-	 public void setGrade(Integer grade) {
-	     this.grade = grade;
-	 }
-	
-	 public Integer getAttendancePercentage() {
+	 public Integer getMarks() {
+		return marks;
+	}
+
+	public void setMarks(Integer marks) {
+		this.marks = marks;
+	}
+
+	public Integer getAttendancePercentage() {
 	     return attendancePercentage;
 	 }
 	
@@ -107,7 +108,7 @@ public class StudentCourse {
 	     return "StudentCourse{" +
 	            "id=" + id +
 	            ", enrolledDate=" + enrolledDate +
-	            ", grade=" + grade +
+	            ", marks =" + marks +
 	            ", attendancePercentage=" + attendancePercentage +
 	            '}';
 	 }

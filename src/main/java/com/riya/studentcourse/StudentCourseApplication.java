@@ -63,16 +63,16 @@ public class StudentCourseApplication {
                 new Student("Charlie Brown", "charlie.brown@gmail.com"),
                 new Student("Jack Hill", "jack.hill@gmail.com"),
                 new Student("Peter Pan", "peter.pan@gmail.com"),
-                new Student("Frank White", "frank.white@gmail.com"),
+                new Student("Frank Ocean", "frank.ocean@gmail.com"),
                 new Student("Grace Lee", "grace.lee@gmail.com"),
                 new Student("Gill Hill", "gill.hill@gmail.com"),
                 new Student("Ivy Chen", "ivy.chen@gmail.com"),
                 new Student("Jack Ryan", "jack.ryan@gmail.com"),
                 new Student("Harry Potter", "karen.green@gmail.com"),
-                new Student("Liam Davis", "liam.davis@gmail.com"),
+                new Student("Liam Hems", "liam.hems@gmail.com"),
                 new Student("Jia Mathur", "jia.mathur@gmail.com"),
-                new Student("Noah Taylor", "noah.taylor@gmail.com"),
-                new Student("Olivia Moore", "olivia.moore@gmail.com")
+                new Student("Noah Right", "noah.right@gmail.com"),
+                new Student("Olivia Just", "olivia.just@gmail.com")
             );
             students.forEach(student -> {
                 if (studentRepository.findByEmail(student.getEmail()).isEmpty()) {
@@ -83,7 +83,6 @@ public class StudentCourseApplication {
                 }
             });
 
-            // Refresh students to ensure IDs are populated for relationships
             List<Student> existingStudents = studentRepository.findAll();
             Student student1 = existingStudents.stream().filter(s -> s.getEmail().equals("riya.mishra@gmail.com")).findFirst().orElse(null);
             Student student2 = existingStudents.stream().filter(s -> s.getEmail().equals("bob.hill@gmail.com")).findFirst().orElse(null);

@@ -7,18 +7,18 @@ public class EnrolledStudentDTO {
 	 private String studentName;
 	 private String studentEmail;
 	 private LocalDate enrolledDate;
-	 private Integer grade;
+	 private Integer marks;
 	 private Integer attendancePercentage;
 	
 	 public EnrolledStudentDTO() {
 	 }
 	
-	 public EnrolledStudentDTO(Long studentId, String studentName, String studentEmail, LocalDate enrolledDate, Integer grade, Integer attendancePercentage) {
+	 public EnrolledStudentDTO(Long studentId, String studentName, String studentEmail, LocalDate enrolledDate, Integer marks, Integer attendancePercentage) {
 	     this.studentId = studentId;
 	     this.studentName = studentName;
 	     this.studentEmail = studentEmail;
 	     this.enrolledDate = enrolledDate;
-	     this.grade = grade;
+	     this.marks = marks;
 	     this.attendancePercentage = attendancePercentage;
 	 }
 	
@@ -54,15 +54,15 @@ public class EnrolledStudentDTO {
 	     this.enrolledDate = enrolledDate;
 	 }
 	
-	 public Integer getGrade() {
-	     return grade;
-	 }
-	
-	 public void setGrade(Integer grade) {
-	     this.grade = grade;
-	 }
-	
-	 public Integer getAttendancePercentage() {
+	 public Integer getMarks() {
+		return marks;
+	}
+
+	public void setMarks(Integer marks) {
+		this.marks = marks;
+	}
+
+	public Integer getAttendancePercentage() {
 	     return attendancePercentage;
 	 }
 	

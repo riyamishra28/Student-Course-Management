@@ -112,7 +112,7 @@ public class StudentService {
 	                 dto.setCourseDescription(sc.getCourse().getDescription());
 	                 dto.setCourseCredits(sc.getCourse().getCredits());
 	                 dto.setEnrolledDate(sc.getEnrolledDate());
-	                 dto.setGrade(sc.getGrade());
+	                 dto.setMarks(sc.getMarks());
 	                 dto.setAttendancePercentage(sc.getAttendancePercentage());
 	                 return dto;
 	             })

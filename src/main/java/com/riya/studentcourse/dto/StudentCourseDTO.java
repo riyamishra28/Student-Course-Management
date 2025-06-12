@@ -16,9 +16,9 @@ public class StudentCourseDTO {
 	 @NotNull(message = "Enrolled date cannot be null")
 	 private LocalDate enrolledDate;
 	
-	 @Min(value = 0, message = "Grade must be at least 0")
-	 @Max(value = 100, message = "Grade must be at most 100")
-	 private Integer grade;
+	 @Min(value = 0, message = "marks must be at least 0")
+	 @Max(value = 100, message = "marks must be at most 100")
+	 private Integer marks;
 	
 	 @NotNull(message = "Attendance cannot be null")
 	 @Min(value = 0, message = "Attendance percentage must be at least 0")
@@ -27,11 +27,11 @@ public class StudentCourseDTO {
 	
 	 public StudentCourseDTO() {}
 	
-	 public StudentCourseDTO(Long studentId, Long courseId, LocalDate enrolledDate, Integer grade, Integer attendancePercentage) {
+	 public StudentCourseDTO(Long studentId, Long courseId, LocalDate enrolledDate, Integer marks, Integer attendancePercentage) {
 	     this.studentId = studentId;
 	     this.courseId = courseId;
 	     this.enrolledDate = enrolledDate;
-	     this.grade = grade;
+	     this.marks = marks;
 	     this.attendancePercentage = attendancePercentage;
 	 }
 	
@@ -59,15 +59,16 @@ public class StudentCourseDTO {
 	     this.enrolledDate = enrolledDate;
 	 }
 	
-	 public Integer getGrade() {
-	     return grade;
-	 }
 	
-	 public void setGrade(Integer grade) {
-	     this.grade = grade;
-	 }
-	
-	 public Integer getAttendancePercentage() {
+	 public Integer getMarks() {
+		return marks;
+	}
+
+	public void setMarks(Integer marks) {
+		this.marks = marks;
+	}
+
+	public Integer getAttendancePercentage() {
 	     return attendancePercentage;
 	 }
 	

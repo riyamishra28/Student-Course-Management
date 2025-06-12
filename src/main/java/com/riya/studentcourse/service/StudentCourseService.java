@@ -64,7 +64,7 @@ public class StudentCourseService {
 	
 	     StudentCourse studentCourse = new StudentCourse(student, course,
 	                                                     studentCourseDTO.getEnrolledDate(),
-	                                                     studentCourseDTO.getGrade(),
+	                                                     studentCourseDTO.getMarks(),
 	                                                     studentCourseDTO.getAttendancePercentage());
 	
 	     studentCourse.setStudent(student); 
@@ -96,7 +96,7 @@ public class StudentCourseService {
 	
 	     
 	     studentCourse.setEnrolledDate(studentCourseDTO.getEnrolledDate());
-	     studentCourse.setGrade(studentCourseDTO.getGrade());
+	     studentCourse.setMarks(studentCourseDTO.getMarks());
 	     studentCourse.setAttendancePercentage(studentCourseDTO.getAttendancePercentage());
 	
 	     StudentCourse updatedStudentCourse = studentCourseRepository.save(studentCourse);

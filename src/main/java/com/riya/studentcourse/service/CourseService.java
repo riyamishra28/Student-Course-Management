@@ -112,7 +112,7 @@ public class CourseService {
 	                    dto.setStudentName(sc.getStudent().getName());
 	                    dto.setStudentEmail(sc.getStudent().getEmail());
 	                    dto.setEnrolledDate(sc.getEnrolledDate());
-	                    dto.setGrade(sc.getGrade());
+	                    dto.setMarks(sc.getMarks());
 	                    dto.setAttendancePercentage(sc.getAttendancePercentage());
 	                    return dto;
 	                })

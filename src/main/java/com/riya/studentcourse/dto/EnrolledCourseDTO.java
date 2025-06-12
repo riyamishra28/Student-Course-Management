@@ -8,18 +8,18 @@ public class EnrolledCourseDTO {
 	 private String courseDescription;
 	 private Integer courseCredits;
 	 private LocalDate enrolledDate;
-	 private Integer grade;
+	 private Integer marks;
 	 private Integer attendancePercentage;
 	
 	 public EnrolledCourseDTO() {}
 	
-	 public EnrolledCourseDTO(Long courseId, String courseTitle, String courseDescription, Integer courseCredits, LocalDate enrolledDate, Integer grade, Integer attendancePercentage) {
+	 public EnrolledCourseDTO(Long courseId, String courseTitle, String courseDescription, Integer courseCredits, LocalDate enrolledDate, Integer marks, Integer attendancePercentage) {
 	     this.courseId = courseId;
 	     this.courseTitle = courseTitle;
 	     this.courseDescription = courseDescription;
 	     this.courseCredits = courseCredits;
 	     this.enrolledDate = enrolledDate;
-	     this.grade = grade;
+	     this.marks = marks;
 	     this.attendancePercentage = attendancePercentage;
 	 }
 	
@@ -63,15 +63,15 @@ public class EnrolledCourseDTO {
 	     this.enrolledDate = enrolledDate;
 	 }
 	
-	 public Integer getGrade() {
-	     return grade;
+	 public Integer getMarks() {
+		return marks;
 	 }
 	
-	 public void setGrade(Integer grade) {
-	     this.grade = grade;
+	 public void setMarks(Integer marks) {
+		this.marks = marks;
 	 }
-	
-	 public Integer getAttendancePercentage() {
+
+	public Integer getAttendancePercentage() {
 	     return attendancePercentage;
 	 }
 	
