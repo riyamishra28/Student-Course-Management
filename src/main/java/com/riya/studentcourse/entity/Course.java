@@ -28,7 +28,6 @@ public class Course {
 	 @PositiveOrZero(message = "Credits must be a positive number or zero")
 	 private Integer credits;
 	
-	 //"owning" side
 	 @OneToMany(mappedBy = "course", cascade = CascadeType.ALL, orphanRemoval = true)
 	 private Set<StudentCourse> studentCourses = new HashSet<>();
 	
