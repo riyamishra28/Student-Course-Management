@@ -56,7 +56,6 @@ public class StudentCourseService {
 	                 return new ResourceNotFoundException("Course not found with ID: " + studentCourseDTO.getCourseId());
 	             });
 	
-	     // Check if student is already enrolled in the course
 	     if (studentCourseRepository.findByStudentIdAndCourseId(student.getId(), course.getId()).isPresent()) {
 	         logger.warn("Student {} is already enrolled in course {}", student.getId(), course.getId());
 	         throw new DuplicateResourceException("Student " + student.getId() + " is already enrolled in course " + course.getId());

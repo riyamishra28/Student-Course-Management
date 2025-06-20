@@ -25,20 +25,20 @@ public class StudentCourseController {
 	     return new ResponseEntity<>(enrolled, HttpStatus.CREATED);
 	 }
 	
-	 @GetMapping("/{studentId}/{courseId}")
+	 @GetMapping("/{studentId}/courses/{courseId}")
 	 public ResponseEntity<StudentCourseDTO> getEnrollmentDetails(@PathVariable Long studentId, @PathVariable Long courseId) {
 	     StudentCourseDTO enrollment = ser.getEnrollmentDetails(studentId, courseId);
 	     return ResponseEntity.ok(enrollment);
 	 }
 	
-	 @PutMapping("/{studentId}/{courseId}")
+	 @PutMapping("/{studentId}/courses/{courseId}")
 	 public ResponseEntity<StudentCourseDTO> updateEnrollment(@PathVariable Long studentId, @PathVariable Long courseId,
 	                                                        @Valid @RequestBody StudentCourseDTO studentCourseDTO) {
 	     StudentCourseDTO updated = ser.updateEnrollment(studentId, courseId, studentCourseDTO);
 	     return ResponseEntity.ok(updated);
 	 }
 	
-	 @DeleteMapping("/{studentId}/{courseId}")
+	 @DeleteMapping("/{studentId}/courses/{courseId}")
 	 public ResponseEntity<Void> unenrollStudentFromCourse(@PathVariable Long studentId, @PathVariable Long courseId) {
 	     ser.unenrollStudentFromCourse(studentId, courseId);
 	     return ResponseEntity.noContent().build();

@@ -100,9 +100,6 @@ public class StudentCourseApplication {
             Student student14 = existingStudents.stream().filter(s -> s.getEmail().equals("noah.taylor@gmail.com")).findFirst().orElse(null);
             Student student15 = existingStudents.stream().filter(s -> s.getEmail().equals("olivia.moore@gmail.com")).findFirst().orElse(null);
 
-
-            // 3. Create and Save StudentCourse enrollments
-            // This needs existing student and course objects with IDs
             if (student1 != null && course1 != null &&
                 studentCourseRepository.findByStudentIdAndCourseId(student1.getId(), course1.getId()).isEmpty()) {
                 studentCourseRepository.save(new StudentCourse(student1, course1, LocalDate.of(2023, 9, 1), 85, 90));

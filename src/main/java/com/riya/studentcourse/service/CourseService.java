@@ -34,7 +34,7 @@ public class CourseService {
 	 @Transactional
 	 public CourseDTO createCourse(CourseDTO courseDTO) {
 	     logger.info("Creating new course with title: {}", courseDTO.getTitle());
-	     // Check if course with this title already exists
+	     
 	     if (courseRepository.findByTitle(courseDTO.getTitle()).isPresent()) {
 	         logger.warn("Attempted to create course with duplicate title: {}", courseDTO.getTitle());
 	         throw new DuplicateResourceException("Course with title " + courseDTO.getTitle() + " already exists.");
@@ -71,7 +71,6 @@ public class CourseService {
 	                 return new ResourceNotFoundException("Course not found with ID: " + id);
 	             });
 	
-	     // Check for duplicate title if title is being changed to an existing one by another course
 	     if (!existingCourse.getTitle().equals(courseDTO.getTitle()) &&
 	         courseRepository.findByTitle(courseDTO.getTitle()).isPresent()) {
 	         logger.warn("Attempted to update course title to an existing title: {}", courseDTO.getTitle());
